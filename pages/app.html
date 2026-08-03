@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Check Todo</title>
+  <link rel="icon" href="../images/web-icon.png" type="image/x-icon">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/app.css">
+</head>
+<body>
+  <div class="background-effect"></div>
+  <span class="blob"></span>
+  <nav>
+    <div class="nav-inner" role="navigation">
+      <img src="../images/logo.png" alt="Check Todo logo" class="logo" />
+      <button id="menuToggle" class="menu-btn" aria-expanded="false">☰</button>
+      <div id="navLinks" class="nav-links">
+        <a href="#" role="menuitem">Home</a>
+        <a href="#" role="menuitem">Benefits</a>
+        <div class="user-info">
+          <div class="avatar-placeholder" id="userAvatar">U</div>
+          <button id="logoutBtn" class="logout-btn">Logout</button>
+        </div>
+      </div>
+
+    </div>
+  </nav>
+
+  <div id="errorMessage" role="status" aria-live="polite"></div>
+
+  <main class="container">
+    <section class="todo">
+      <h2>Add Task</h2>
+      <form id="taskForm" class="task-form">
+        <input id="taskInput" class="input" type="text" placeholder="Task title" required />
+        <textarea id="taskDesc" class="input" placeholder="Description (optional)" rows="1"></textarea>
+        <div class="form-row">
+          <input id="taskDate" class="input" type="date" />
+          <input id="taskTime" class="input" type="time" placeholder="Due Time" required />
+        </div>
+        <div class="form-row">
+          <select id="taskPriority" class="input" required>
+            <option value="" disabled selected>Priority</option>
+            <option value="Low">🟢Low</option>
+            <option value="Medium">🟡Medium</option>
+            <option value="High">🔴 High</option>
+          </select>
+          <select id="taskCategory" class="input" required>
+            <option value="" disabled selected>Category</option>
+            <option value="Work">💼Work</option>
+            <option value="Personal">👤Personal</option>
+            <option value="Study">📚Study</option>
+            <option value="Shopping">🛒Shopping</option>
+            <option value="Other">📦Other</option>
+          </select>
+        </div>
+        <button id="addTaskButton" class="btn" type="submit">
+          <span class="btn-text">+</span>
+        </button>
+      </form>
+
+      <div class="progress">
+        <h2>Your Tasks</h2>
+        <progress value="0" max="100" id="progressBar"></progress>
+        <p id="progressText">0/0 completed</p>
+      </div>
+      <small>Filter Tasks</small>
+      <div class="filter-controls">
+        <select id="filterPriority" class="filter-select">
+          <option value="">All Priorities</option>
+          <option value="Low">🟢 Low</option>
+          <option value="Medium">🟡 Medium</option>
+          <option value="High">🔴 High</option>
+        </select>
+        <select id="filterCategory" class="filter-select">
+          <option value="">All Categories</option>
+          <option value="Work">💼 Work</option>
+          <option value="Personal">🏠 Personal</option>
+          <option value="Study">📚 Study</option>
+          <option value="Shopping">🛒 Shopping</option>
+          <option value="Other">📦 Other</option>
+        </select>
+        <select id="filterStatus" class="filter-select">
+          <option value="">All Statuses</option>
+          <option value="completed">✅ Completed</option>
+          <option value="pending">⏳ Pending</option>
+        </select>
+        <select id="filterTime" class="filter-select">
+          <option value="">All Times</option>
+          <option value="today">Due Today</option>
+          <option value="upcoming">Upcoming</option>
+          <option value="overdue">Overdue</option>
+        </select>
+      </div>
+
+      <div id="loader">⏳ Syncing with server...</div>
+      <ul id="taskList"></ul>
+
+      <footer>
+        <p>Developed by: COS221 - Group 5, All rights reserved.</p>
+      </footer>
+    </section>
+  </main>
+
+  <script src="../js/app.js"></script>
+
+</body>
+</html>

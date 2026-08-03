@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+  <link rel="stylesheet" href="../css/auth.css" />
+  <link rel="icon" href="../images/logo-f.png" />
+  <title>Sign Up / Login</title>
+</head>
+<body>
+  <!-- 🔔 Message placeholder for JavaScript -->
+  <div id="errorMessage" class="message"></div>
+
+  <div class="container" id="container">
+
+    <!-- NEW: Mobile Tabs -->
+    <div class="mobile-tabs">
+      <button id="mobileLoginBtn" type="button" class="active">Sign In</button>
+      <button id="mobileRegisterBtn" type="button">Sign Up</button>
+    </div>
+
+    <!-- SIGN UP FORM -->
+    <div class="form-container sign-up">
+      <form id="signupForm">
+        <h1>Create Account</h1>
+        <input id="registerUser" type="text" placeholder="Username" required />
+        <input id="registerEmail" type="email" placeholder="Email" required />
+        <div class="input-group">
+          <input id="registerPass" type="password" placeholder="Password" required />
+          <span class="toggle-password" data-target="registerPass"></span>
+        </div>
+        <button id="signupBtn" type="submit">Sign Up</button>
+      </form>
+    </div>
+
+    <!-- SIGN IN FORM -->
+    <div class="form-container sign-in">
+      <form id="loginForm">
+        <h1>Sign In</h1>
+        <input id="loginUser" type="text" placeholder="Username" required />
+        <div class="input-group">
+          <input id="loginPass" type="password" placeholder="Password" required />
+          <span class="toggle-password" data-target="loginPass"></span>
+        </div>
+        <a href="#">Forgot Your Password?</a>
+        <button id="loginBtn" type="submit">Sign In</button>
+      </form>
+    </div>
+
+    <!-- TOGGLE PANELS (desktop only) -->
+    <div class="toggle-container">
+      <div class="toggle">
+        <div class="toggle-panel toggle-left">
+          <img class="logo" src="../images/logo.png" alt="logo" />
+          <h1>Welcome Back!</h1>
+          <p>
+            The simplest way to organize your tasks and boost productivity.
+            Clean, intuitive, and powerful to-do management for everyone.
+          </p>
+          <button class="hidden" id="desktopLoginBtn" type="button">Sign In</button>
+        </div>
+        <div class="toggle-panel toggle-right">
+          <img class="logoh" src="../images/logo.png" alt="logo" />
+          <h1>Hello, Friend!</h1>
+          <p>
+            The simplest way to organize your tasks and boost productivity.
+            Clean, intuitive, and powerful to-do management for everyone.
+          </p>
+          <button class="hidden" id="desktopRegisterBtn" type="button">Sign Up</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="../JS/auth.js"></script>
+</body>
+</html>
